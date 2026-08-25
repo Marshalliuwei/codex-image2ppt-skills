@@ -3,6 +3,8 @@ Thumbs.db
 .codex_tmp/
 node_modules/
 *.pptx
+!docs/examples/
+!docs/examples/*.pptx
 *.png
 !docs/images/
 !docs/images/*.png

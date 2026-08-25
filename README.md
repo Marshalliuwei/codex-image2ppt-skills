@@ -1,4 +1,4 @@
-# Codex Visual Skills
+# [**codex-image2ppt-skills**](https://github.com/Marshalliuwei/codex-image2ppt-skills)
 
 两个面向 Codex 的开源视觉工作流 Skill：精准重绘软件架构图，以及把截图/信息图高保真重建为可编辑 PowerPoint。
 
@@ -13,17 +13,13 @@ Two reusable Codex skills for architecture-diagram redraws and high-fidelity ima
 
 ## 效果展示
 
-### Architecture Diagram Redraw
-
-<img src="docs/images/architecture-diagram-redraw-demo.png" alt="Architecture Diagram Redraw 多彩软件架构图示例" width="100%">
-
-> 智能多彩配色示例：用颜色强化传统流程与 AI 原生流程的语义分组，同时保持清晰的框、连线和信息层级。
-
 ### Image to Editable PPT
 
 <img src="docs/images/image-to-editable-ppt-demo.png" alt="Image to Editable PPT 最终 PPTX 渲染示例" width="100%">
 
 > 最终 PPTX 渲染示例：文字、卡片、连接线和图标按独立对象重建，便于继续编辑、移动和替换。
+
+[下载对应的可编辑 PPTX 示例](docs/examples/image-to-editable-ppt-demo.pptx)
 
 以上图片均为通用演示内容，不包含真实业务数据。
 
@@ -39,8 +35,8 @@ Two reusable Codex skills for architecture-diagram redraws and high-fidelity ima
 先克隆仓库：
 
 ```bash
-git clone https://github.com/Marshalliuwei/codex-visual-skills.git
-cd codex-visual-skills
+git clone https://github.com/Marshalliuwei/codex-image2ppt-skills.git
+cd codex-image2ppt-skills
 ```
 
 Windows PowerShell：
@@ -95,11 +91,15 @@ $image-to-editable-ppt 将这张信息图重建为可编辑 PPT，并让内容�
 ## 仓库结构
 
 ```text
-codex-visual-skills/
+codex-image2ppt-skills/
 ├── skills/
 │   ├── architecture-diagram-redraw/
 │   └── image-to-editable-ppt/
 ├── docs/
+│   ├── examples/
+│   │   └── image-to-editable-ppt-demo.pptx
+│   ├── images/
+│   │   └── image-to-editable-ppt-demo.png
 │   └── USAGE.zh-CN.md
 ├── CONTRIBUTING.md
 ├── LICENSE
