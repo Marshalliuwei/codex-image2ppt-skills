@@ -11,6 +11,22 @@ Two reusable Codex skills for architecture-diagram redraws and high-fidelity ima
 | [`architecture-diagram-redraw`](skills/architecture-diagram-redraw/) | 在锁定文字、区域/框数量和连线关系的前提下，美化流程图与软件架构图；支持原始配色和智能多彩配色 | PNG |
 | [`image-to-editable-ppt`](skills/image-to-editable-ppt/) | 将幻灯片截图、信息图或流程图拆解为原生文本框、形状、连线和独立图标，并完成渲染 QA | PPTX |
 
+## 效果展示
+
+### Architecture Diagram Redraw
+
+<img src="docs/images/architecture-diagram-redraw-demo.png" alt="Architecture Diagram Redraw 多彩软件架构图示例" width="100%">
+
+> 智能多彩配色示例：用颜色强化传统流程与 AI 原生流程的语义分组，同时保持清晰的框、连线和信息层级。
+
+### Image to Editable PPT
+
+<img src="docs/images/image-to-editable-ppt-demo.png" alt="Image to Editable PPT 最终 PPTX 渲染示例" width="100%">
+
+> 最终 PPTX 渲染示例：文字、卡片、连接线和图标按独立对象重建，便于继续编辑、移动和替换。
+
+以上图片均为通用演示内容，不包含真实业务数据。
+
 ## 设计原则
 
 - 内容优先：参考图中的文字、结构和关系不应因美化而发生语义漂移。

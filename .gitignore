@@ -4,6 +4,8 @@ Thumbs.db
 node_modules/
 *.pptx
 *.png
+!docs/images/
+!docs/images/*.png
 *.jpg
 *.jpeg
 *.webp
