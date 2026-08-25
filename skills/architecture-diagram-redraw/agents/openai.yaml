@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Diagram Redraw"
+  short_description: "Redraw diagrams with original or smart multicolor palettes"
+  default_prompt: "Use $architecture-diagram-redraw to redraw the attached diagram while preserving all text, box counts, regions, and connector relationships."

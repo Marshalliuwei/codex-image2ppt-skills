@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.codex_tmp/
+node_modules/
+*.pptx
+*.png
+*.jpg
+*.jpeg
+*.webp
+crop-manifest.json

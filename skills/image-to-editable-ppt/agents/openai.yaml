@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image to Editable PPT"
+  short_description: "将参考图高保真重建为可编辑 PowerPoint"
+  default_prompt: "Use $image-to-editable-ppt to recreate the attached image as a high-fidelity editable PowerPoint. If proportional scaling is requested, keep the slide canvas unchanged and center the scaled content on both axes by default."
