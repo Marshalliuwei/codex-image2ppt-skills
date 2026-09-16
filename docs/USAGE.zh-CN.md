@@ -165,3 +165,18 @@ python -X utf8 "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\qui
 ### 是否需要安装 npm 依赖？
 
 仓库脚本设计为使用 Codex 工作区运行时中的 `sharp` 和 `@oai/artifact-tool`。在标准 Codex 工作流中无需全局安装依赖；脱离该运行时单独使用脚本时，需要自行提供兼容包路径。
+
+### 图标放到有色背景上出现矩形色块怎么办？
+
+默认优先采用真实 Alpha 透明底图标。直接裁剪会保留原图底色；先换成白底再裁剪，也会在蓝色、青色或渐变背景上留下白色矩形，因此白底方案只适合能完全融合的纯白目标区域。
+
+透明处理应保留白色笔画、内部符号、图标文字和有意设计的徽章，不能把白色像素一律删除。批量替换时保留图标与幻灯片的对应关系、位置和可见尺寸，并检查透明通道、边缘白边、色晕及最终 PPT 渲染效果。若需要从不透明图片提取图标，使用环境中可用的图片编辑工具及其技能指引；不要求为已有透明素材重新生成图标。
+
+示例请求：
+
+```text
+$image-to-editable-ppt 把这张图转换为可编辑 PPT，渐变流程区的图标使用透明背景，内容按 90% 比例居中
+$image-to-editable-ppt 修复这份 PPT 的图标底色色差，检查全稿类似图标，保留现有文字、布局和缩放比例
+```
+
+处理细节见[透明背景清理流程](../skills/image-to-editable-ppt/references/reconstruction-workflow.md#transparent-background-cleanup)。

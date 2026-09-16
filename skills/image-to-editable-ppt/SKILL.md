@@ -26,6 +26,13 @@ Reconstruct the reference image as editable PowerPoint objects while preserving 
 
 When the source contains multiple icons or small graphics, use [scripts/crop_regions.mjs](scripts/crop_regions.mjs) with a reviewed region manifest. Use the bundled workspace Node runtime and its `RUNTIME_NODE_MODULES`; do not install packages globally.
 
+### Transparent icon backgrounds
+
+- Prefer icons with genuine alpha transparency, especially on colored cards and gradient process arrows. Cropping alone retains the source background and can leave a visible rectangular color patch.
+- Remove incidental crop backgrounds, not intentional parts of the icon such as a colored badge, white foreground, inner glyphs, or designed shadow. Preserve icon meaning, proportions, and colors; background cleanup is not permission to redesign icons.
+- Do not replace a colored crop background with white when its destination is colored or gradient. White-background preparation is a fallback only for a matching solid-white destination.
+- Follow the background-cleanup procedure in [references/reconstruction-workflow.md](references/reconstruction-workflow.md#transparent-background-cleanup). Verify edges on the actual slide background before accepting replacements.
+
 ## Proportional content scaling
 
 When the user asks for the reconstructed content to occupy less than the full canvas:
@@ -41,4 +48,4 @@ When the user asks for the reconstructed content to occupy less than the full ca
 
 ## Completion standard
 
-Render every final slide from the exported PPTX, inspect it at full size beside the source, run the presentation overflow test, and correct all observable omissions, clipping, wrapping, misalignment, and unintended overlaps. Report any element that remains rasterized or only independently editable. Do not claim literal 100% fidelity unless the rendered comparison supports it.
+Render every final slide from the exported PPTX, inspect it at full size beside the source, run the presentation overflow test, and correct all observable omissions, clipping, wrapping, misalignment, unintended overlaps, and icon background patches. Report any element that remains rasterized or only independently editable. Do not claim literal 100% fidelity unless the rendered comparison supports it.

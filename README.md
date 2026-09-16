@@ -4,6 +4,8 @@
 
 Two reusable Codex skills for architecture-diagram redraws and high-fidelity image-to-editable-PowerPoint reconstruction.
 
+图片转 PPT 支持透明底图标处理：优先使用真实 Alpha 透明背景，避免裁剪图标在有色卡片、渐变箭头上出现矩形色块；保留图标内部细节，并在最终 PPT 中检查边缘和显示效果。具体流程见[透明背景清理](skills/image-to-editable-ppt/references/reconstruction-workflow.md#transparent-background-cleanup)。
+
 ## 包含的 Skill
 
 | Skill | 能力 | 典型输出 |

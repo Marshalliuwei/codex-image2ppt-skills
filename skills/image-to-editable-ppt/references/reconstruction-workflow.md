@@ -59,6 +59,20 @@ Review every crop before use. It must not contain adjacent text, borders, or unr
 
 Use native PowerPoint shapes instead when a simple icon can be reproduced faithfully and remains meaningfully more editable. Do not approximate a distinctive logo with generic shapes.
 
+### Transparent background cleanup
+
+When a crop retains an incidental colored, gradient, or near-white backdrop, clean it before placing it on a different surface. Apply this check to all similar icons across the deck, not only the example highlighted by the user.
+
+1. Prefer an available original transparent asset or editable vector that faithfully matches the reference. Otherwise isolate the cropped icon with genuine alpha transparency, using the available image-editing tool and its current skill instructions. Do not assume a white or checkerboard-looking image is transparent.
+2. Preserve the foreground: white strokes, colored internal symbols, text such as `API`, enclosed details, and intentional circular or square badges. Remove only the incidental background, including holes through which the slide background should show. Avoid global white-color deletion, which can erase white icons.
+3. Request background extraction with unchanged icon identity, colors, proportions, and details. Reject outputs that invent strokes, change symbols, or introduce fuzzy halos and speckles. If exact cleanup is not feasible, disclose the limitation rather than silently substituting a different icon.
+4. Inspect both the alpha channel and the visual result. Transparent pixels must actually exist outside the silhouette. Check the asset on light and dark surfaces to reveal fringes, then on the actual colored or gradient destination at presentation size. An alpha channel by itself does not prove successful background removal.
+5. For batches, retain a manifest mapping each source crop to its slide, semantic icon name, replacement file, and placement. If an atlas is used, verify the returned image dimensions, grid, count, order, and crop bounds; generation can shift icons or change resolution. Do not blindly reuse the original atlas coordinates. Review every separated icon for clipping, contamination from adjacent cells, and incorrect substitutions.
+6. Preserve alpha when cropping, resizing, and embedding the replacement PNG. Do not flatten the delivery asset onto white or the slide color. Keep the original placement frame and aspect ratio, and account for any transparent padding so the visible icon does not unintentionally grow, shrink, or shift.
+7. For an existing deck, replace only the affected image assets or picture references. Preserve editable text, native shapes, connectors, slide order, and the requested content scale. Save a new PPTX and render the result to confirm that transparency survives export.
+
+Changing the source background to pure white before cropping is suitable only when the icon will sit on solid white and its foreground remains intact. It still creates a white rectangle on a colored or gradient slide, so it is not the default remedy for background mismatch.
+
 ## 5. Author the slide
 
 Follow the current Presentations skill and use `@oai/artifact-tool` from a JavaScript ES module.
@@ -133,6 +147,8 @@ Perform at least one full comparison after the first export and another after th
 - fonts, weights, colors, and visual tracking are credible;
 - repeated cards share consistent dimensions and spacing;
 - icon crops are sharp, isolated, and independently selectable;
+- icon backgrounds blend with their destination, with no unintended rectangles, white fringes, colored halos, or checkerboard artifacts;
+- transparent replacements retain white foreground details, intentional badges, correct identity, and apparent size;
 - borders, corner radii, shadows, and gradients are consistent;
 - all connector types, endpoints, bends, dash patterns, and arrowheads are present;
 - z-order is correct and no connector crosses readable text;
